@@ -11,5 +11,8 @@ class _Classes(types.ModuleType):
             raise RuntimeError('Class {} not registered!'.format(attr))
         return proxy
 
+    def load_library(self, path):
+        torch.ops.load_library(path)
+
 # The classes "namespace"
 classes = _Classes()
